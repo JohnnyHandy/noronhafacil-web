@@ -1,32 +1,49 @@
 import * as React from "react"
 import PropTypes from "prop-types"
-import { Link } from "gatsby"
+import { StaticImage } from 'gatsby-plugin-image'
+import { css } from '@emotion/react'
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
+import { colors } from '../utils/constants'
+
+const navLink = css`
+  color: ${colors.noronhaBlue};
+  cursor: pointer;
+  font-family: Open Sans;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0 1.5em;
+`
+
+const headerCss = css`
+  background: white;
+  box-shadow: 0px 10px 21px 0px rgba(0,0,0,0.75);
+  margin-bottom: 1.5em;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+`
+
+const Header = () => (
+  <header id='header' css={headerCss}>
     <div
       style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
+        display: 'flex',
+        flexDirection: 'column',
+        padding: '1em'
       }}
     >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
+      <StaticImage style={{ margin: 'auto', width: '20em' }} aspectRatio={500/161} src={'../images/noronhafacil-logo.png'} alt='Noronha Fácil Turismo' />
+      <div
+        style={{
+          margin: 'auto'
+        }}
+      >
+        <span css={navLink}>Início</span>
+        <span css={navLink}>Passeios</span>
+        <span css={navLink}>Quem somos</span>
+        <span css={navLink}>Contato</span>
+      </div>
     </div>
   </header>
 )
