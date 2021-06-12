@@ -1,7 +1,17 @@
 import React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
-
+import { css } from '@emotion/react'
 import { colors } from '../utils/constants'
+
+const welcomeTitle = css`
+  color: ${colors.noronhaBlue};
+  font-size: 50px;
+  @media (max-width: 650px) {
+    text-align: center;
+  };
+`
+
+
 
 const MainSection = ({ height, headerHeight }) => {
   return(
@@ -10,7 +20,8 @@ const MainSection = ({ height, headerHeight }) => {
       alignItems: 'flex-start',
       display: 'flex',
       justifyContent: 'center',
-      height,
+      height: height,
+      maxHeight: '100vh',
       width: '100%',
     }}
   >
@@ -32,7 +43,7 @@ const MainSection = ({ height, headerHeight }) => {
       </div>
       <div>
        <StaticImage style={{ margin: 'auto' }} aspectRatio={500/161} src={'../images/noronhafacil-logo.png'} alt='Noronha Fácil Turismo' />
-       <h1 style={{ fontSize: '50px', color: colors.noronhaBlue }}> Sua aventura começa aqui! </h1>
+       <h1 css={welcomeTitle}> Sua aventura começa aqui! </h1>
       </div>
     </div>
   )

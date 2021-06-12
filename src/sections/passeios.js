@@ -7,6 +7,54 @@ import { colors } from '../utils/constants'
 const sectionTitle = css`
   color: ${colors.noronhaBlue};
 `
+const gridContainerCss = css`
+  display: grid;
+  grid-template-columns: repeat(2, 0.5fr);
+  column-gap: 2em;
+  row-gap: 1em;
+  @media (max-width: 650px) {
+    grid-template-columns: repeat(1, 1fr);
+  };
+
+`
+const gridImageCss = css`
+  width: 35em;
+  @media (max-width: 650px) {
+    width:100%
+  };
+`
+const PasseiosGridCss = css`
+  display:flex;
+  border: 1px solid ${colors.noronhaBlue};
+  @media (max-width: 650px) {
+    flex-direction: column;
+  };
+`
+
+const verMaisButton = css`
+  background: ${colors.noronhaBlue};
+  color: white;
+  padding: 1em;
+  width: fit-content;
+  text-transform: uppercase;
+  @media (max-width: 650px) {
+    margin: 0.5em auto;
+  };
+
+`
+const comprarAgoraButton = css`
+  background: lightgreen;
+  color: white;
+  padding: 1em;
+  margin: 0 auto;
+  width: fit-content;
+  text-transform: uppercase;
+  @media (max-width: 650px) {
+    margin: 0.5em auto;
+  };
+`
+
+
 const PasseioDesc = 'Esse é o passeio mais completo para conhecer as belezas de toda a ilha de Fernando de Noronha'
 
 const Passeios = () => {
@@ -14,9 +62,9 @@ const Passeios = () => {
     return [...Array(6)].map((_, index) => (
       <div
       key={index}
-      style={{ display: 'flex', border: `1px solid ${colors.noronhaBlue}` }}
+      css={PasseiosGridCss}
       >
-    <StaticImage style={{ width: '35em' }} src={'../images/passeio.jpg'} />
+    <StaticImage css={gridImageCss} src={'../images/passeio.jpg'} />
       <div
         style={{ textAlign: 'center', padding: '1em', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
       >
@@ -28,13 +76,13 @@ const Passeios = () => {
           {PasseioDesc}
         </p>
         <div
-          style={{ background: `${colors.noronhaBlue}`, color: 'white', padding: '1em', width: 'fit-content', textTransform: 'uppercase' }}
+         css={verMaisButton}
         >
           Ver mais
         </div>
         </div>
         <div
-         style={{ background: `lightgreen`, color: 'white', padding: '1em', margin: '0 auto', textTransform: 'uppercase' }}
+        css={comprarAgoraButton}
         >
           Comprar Agora
         </div>
@@ -55,12 +103,7 @@ const Passeios = () => {
     >
       <h1 css={sectionTitle}> Nossos Passeios </h1>
       <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(2, 0.5fr)',
-          columnGap: '2em',
-          rowGap: '1em'
-        }}
+        css={gridContainerCss}
       >
        <PasseiosGrid />
 

@@ -1,6 +1,4 @@
 import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
 
 import MainSection from '../sections/main'
 import PasseiosSection from '../sections/passeios'
@@ -16,6 +14,7 @@ const IndexPage = () => {
     setHeight(window.innerHeight)
     setHeaderHeight(document.getElementById('header').clientHeight)
   }, [])
+  console.log('headerHeight', headerHeight)
   return (
   <Layout height={height} headerHeight={headerHeight}>
     <Seo title="Início" />

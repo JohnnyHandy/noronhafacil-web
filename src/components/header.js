@@ -12,6 +12,10 @@ const navLink = css`
   font-size: 24px;
   font-weight: bold;
   margin: 0 1.5em;
+  @media (max-width: 650px) {
+    white-space: pre;
+  };
+
 `
 
 const headerCss = css`
@@ -22,22 +26,34 @@ const headerCss = css`
   top: 0;
   width: 100%;
   z-index: 2;
+  @media (max-width: 650px) {
+    max-width: 100vw;
+  };
+`
+
+const headerContainerCss = css`
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+`
+const navLinksContainer = css`
+  margin: auto;
+  @media (max-width: 650px) {
+    display: grid;
+    grid-template-columns: repeat(2, 0.5fr);
+    grid-row-gap: 1em;  
+  };
+
 `
 
 const Header = () => (
   <header id='header' css={headerCss}>
     <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        padding: '1em'
-      }}
+      css={headerContainerCss}
     >
       <StaticImage style={{ margin: 'auto', width: '20em' }} aspectRatio={500/161} src={'../images/noronhafacil-logo.png'} alt='Noronha Fácil Turismo' />
       <div
-        style={{
-          margin: 'auto'
-        }}
+        css={navLinksContainer}
       >
         <span css={navLink}>Início</span>
         <span css={navLink}>Passeios</span>
