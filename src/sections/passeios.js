@@ -112,7 +112,7 @@ const Passeios = ({ sectionRef }) => {
         width: '100%',
       }}
     >
-      <h1 css={sectionTitle}> Nosso  </h1>
+      <h1 css={sectionTitle}> Nosso Catálogo  </h1>
       <div
         css={gridContainerCss}
       >
