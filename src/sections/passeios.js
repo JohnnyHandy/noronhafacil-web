@@ -1,5 +1,5 @@
 import React from 'react'
-import { css } from '@emotion/react'
+import { css, keyframes } from '@emotion/react'
 
 import PasseioContainer from '../components/passeio/passeio'
 
@@ -16,7 +16,30 @@ const gridContainerCss = css`
   @media (max-width: 650px) {
     grid-template-columns: repeat(1, 1fr);
   };
+`
 
+const animationKeyFrame = keyframes`
+  from {
+    transform: translateY(15px);
+    display: none;
+    opacity: 0;
+  }
+  to {
+    transform: translate(0);
+    display: block;
+    opacity: 1;
+  }
+`
+
+
+const passeiosContainerCss = css`
+  align-items: center;
+  animation: ${animationKeyFrame} 1s ease;
+  display: flex;
+  flex-direction: column;
+  justifyContent: center;
+  padding: 2em 0;
+  width: 100%;
 `
 
 const passeiosInfo = [
@@ -103,14 +126,7 @@ const Passeios = ({ sectionRef }) => {
   return (
     <div
       ref={sectionRef}
-      style={{
-        alignItems: 'center',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        padding: '2em 0',
-        width: '100%',
-      }}
+      css={passeiosContainerCss}
     >
       <h1 css={sectionTitle}> Nosso Catálogo  </h1>
       <div

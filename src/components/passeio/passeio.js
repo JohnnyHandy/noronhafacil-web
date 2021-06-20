@@ -4,6 +4,19 @@ import { StaticImage } from 'gatsby-plugin-image'
 
 import { colors } from '../../utils/constants'
 
+const passeioInfoContainerCss = css`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center; padding: 1em;   
+`
+
+const passeioDescriptionCss = css`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+`
 
 const gridImageCss = css`
   align-self: center;
@@ -21,6 +34,22 @@ const PasseiosGridCss = css`
     flex-direction: column;
   };
 `
+const buyContainerCss = css`
+  margin-top: 1.5em;
+`
+
+
+const oldPriceCss = css`
+  color: lightgray;
+  text-decoration: line-through;
+`
+
+const priceCss = css`
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 1em 0;
+`
+
 const verMaisButton = css`
   background: ${colors.noronhaBlue};
   color: white;
@@ -31,12 +60,20 @@ const verMaisButton = css`
   @media (max-width: 650px) {
     margin: 0.5em auto;
   };
-
 `
+// const verMaisCss = css`
+//   ${props => props.seeMore ?
+//     `display: block;
+//     opacity: 0%;
+//     ` :
+//     ''}
+// `
+
 const comprarAgoraButton = css`
   background: lightgreen;
   color: white;
   cursor: pointer;
+  font-weight: bold;
   padding: 1em;
   margin: 0 auto;
   width: fit-content;
@@ -44,6 +81,10 @@ const comprarAgoraButton = css`
   @media (max-width: 650px) {
     margin: 0.5em auto;
   };
+  &:hover{
+    background: #21b300;
+    box-shadow: 0px 10px 5px -2px rgb(144, 238, 144);
+  }
 `
 
 
@@ -56,10 +97,10 @@ const Passeio = ({ passeio }) => {
       >
     <StaticImage css={gridImageCss} src='../../images/passeio.jpg' />
       <div
-        style={{ textAlign: 'center', padding: '1em', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
+      css={passeioInfoContainerCss}
       >
         <div
-          style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+          css={passeioDescriptionCss}
         >
         <h3>{passeio.name}</h3>
         <p>
@@ -74,19 +115,26 @@ const Passeio = ({ passeio }) => {
           </p>
         <div
          css={verMaisButton}
+         role='button'
+         tabIndex={passeio.name}
+         onKeyDown={() => {
+           setSeeMore(!seeMore)
+         }}
          onClick={() => setSeeMore(!seeMore)}
         >
           Ver mais
         </div>
         </div>
-        <div>
+        <div
+          css={buyContainerCss}
+        >
         {
           passeio.price === null ? (
             <span> Consulte-nos para orçamento </span>
           ) : (
             <>
-            <span style={{ textDecoration: 'line-through', color: 'lightgray' }} > {passeio.oldPrice !== null && `R$${passeio.oldPrice}`} </span>
-            <span style={{ fontWeight: 'bold', fontSize: '1.5em', margin: '1em 0' }}> R$ {passeio.price} </span>
+            <span css={oldPriceCss} > {passeio.oldPrice !== null && `R$${passeio.oldPrice}`} </span>
+            <span css={priceCss}> R$ {passeio.price} </span>
             </>
           )
         }
