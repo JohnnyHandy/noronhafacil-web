@@ -54,7 +54,7 @@ const Passeio = ({ passeio }) => {
       key={passeio.name}
       css={PasseiosGridCss}
       >
-    <StaticImage css={gridImageCss} src='../images/passeio.jpg' />
+    <StaticImage css={gridImageCss} src='../../images/passeio.jpg' />
       <div
         style={{ textAlign: 'center', padding: '1em', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
       >
