@@ -13,9 +13,10 @@ const welcomeTitle = css`
 
 
 
-const MainSection = ({ height, headerHeight }) => {
+const MainSection = ({ height, headerHeight, sectionRef }) => {
   return(
     <div
+    ref={sectionRef}
     style={{
       alignItems: 'flex-start',
       display: 'flex',
@@ -42,8 +43,7 @@ const MainSection = ({ height, headerHeight }) => {
         />
       </div>
       <div>
-       <StaticImage style={{ margin: 'auto' }} aspectRatio={500/161} src={'../images/noronhafacil-logo.png'} alt='Noronha Fácil Turismo' />
-       <h1 css={welcomeTitle}> Sua aventura começa aqui! </h1>
+       <StaticImage style={{ margin: '5em auto' }} aspectRatio={500/161} src={'../images/noronhafacil-logo.png'} alt='Noronha Fácil Turismo' />
       </div>
     </div>
   )

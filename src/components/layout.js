@@ -13,7 +13,7 @@ import Header from "./header"
 import Footer from './footer'
 import "./layout.css"
 
-const Layout = ({ children, height, headerHeight }) => {
+const Layout = ({ children, height, headerHeight, allRefsObject, scrollToRef }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -25,7 +25,7 @@ const Layout = ({ children, height, headerHeight }) => {
   `)
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+      <Header headerHeight={headerHeight} scrollToRef={scrollToRef} allRefsObject={allRefsObject} siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div
         style={{
           margin: `0 auto`,
@@ -37,7 +37,7 @@ const Layout = ({ children, height, headerHeight }) => {
             marginTop: headerHeight
           }}
         >{children}</main>
-      <Footer />
+      <Footer sectionRef={allRefsObject.ContatosRef} />
     </div>
     </>
   )

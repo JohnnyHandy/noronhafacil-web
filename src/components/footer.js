@@ -33,9 +33,9 @@ const logoCss = css`
 
 const spanCss = css``
 
-const Footer = () => {
+const Footer = ({ sectionRef }) => {
   return (
-    <footer css={footerContainer}>
+    <footer ref={sectionRef} css={footerContainer}>
       <div
         css={footerInnerContainer}
       >
@@ -49,7 +49,7 @@ const Footer = () => {
           <h3 css={footerContactTitle}> Contato </h3>
           <div>
             <StaticImage style={{ width: '2em' }} src={'../images/whatsapp.svg'} />
-            <span css={spanCss} > Thiego: 83 99999-9999 </span>
+            <span css={spanCss} > 83 996498582 </span>
           </div>
           <div>
             <StaticImage style={{ width: '2em' }} src={'../images/instagram.svg'} />
@@ -57,7 +57,7 @@ const Footer = () => {
           </div>
           <div>
             <StaticImage style={{ width: '2em' }} src={'../images/mail.svg'} />
-            <span css={spanCss}> thiego@noronhafacil.com</span>
+            <span css={spanCss}> noronhafacil@gmail.com</span>
           </div>
         </div>
       </div>

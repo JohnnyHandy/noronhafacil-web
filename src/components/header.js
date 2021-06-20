@@ -2,6 +2,7 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import { StaticImage } from 'gatsby-plugin-image'
 import { css } from '@emotion/react'
+import { Slide, useScrollTrigger } from '@material-ui/core';
 
 import { colors } from '../utils/constants'
 
@@ -46,23 +47,31 @@ const navLinksContainer = css`
 
 `
 
-const Header = () => (
-  <header id='header' css={headerCss}>
-    <div
-      css={headerContainerCss}
+const Header = ({ allRefsObject, scrollToRef, headerHeight, ...rest }) => {
+  const trigger = useScrollTrigger();
+  return (
+    <Slide appear={false} direction="down" in={!trigger}>
+    <header
+      id='header'
+      css={headerCss}
     >
-      <StaticImage style={{ margin: 'auto', width: '20em' }} aspectRatio={500/161} src={'../images/noronhafacil-logo.png'} alt='Noronha Fácil Turismo' />
       <div
-        css={navLinksContainer}
+        css={headerContainerCss}
       >
-        <span css={navLink}>Início</span>
-        <span css={navLink}>Passeios</span>
-        <span css={navLink}>Quem somos</span>
-        <span css={navLink}>Contato</span>
+        <StaticImage style={{ margin: 'auto', width: '20em' }} aspectRatio={500/161} src={'../images/noronhafacil-logo.png'} alt='Noronha Fácil Turismo' />
+        <div
+          css={navLinksContainer}
+        >
+          <span onClick={() => scrollToRef(allRefsObject.MainRef)} css={navLink}>Início</span>
+          <span onClick={() => scrollToRef(allRefsObject.PasseiosRef)} css={navLink}>Catálogo</span>
+          <span onClick={() => scrollToRef(allRefsObject.QuemSomosRef)} css={navLink}>Quem somos</span>
+          <span  onClick={() => scrollToRef(allRefsObject.ContatosRef)} css={navLink}>Contato</span>
+        </div>
       </div>
-    </div>
-  </header>
-)
+    </header>
+
+    </Slide>
+)}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
