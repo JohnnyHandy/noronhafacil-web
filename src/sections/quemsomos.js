@@ -57,7 +57,6 @@ const paragraphsContainerCss = css`
     line-height: 1.5em;
   };
 `
-const quemSomosDesc = 'O passeio é quase obrigatório para quem está indo pela primeira vez ao arquipélago, com acesso às principais praias, pontos históricos, incríveis mirantes,'
 
 const QuemSomos = ({ sectionRef, height }) => {
   return (

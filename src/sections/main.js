@@ -1,19 +1,9 @@
 import React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
-import { css } from '@emotion/react'
-import { colors } from '../utils/constants'
-
-const welcomeTitle = css`
-  color: ${colors.noronhaBlue};
-  font-size: 50px;
-  @media (max-width: 650px) {
-    text-align: center;
-  };
-`
 
 
 
-const MainSection = ({ height, headerHeight, sectionRef }) => {
+const MainSection = ({ height, sectionRef }) => {
   return(
     <div
     ref={sectionRef}
