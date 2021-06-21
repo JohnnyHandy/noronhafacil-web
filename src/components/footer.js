@@ -12,6 +12,7 @@ const footerContactTitle = css`
 `
 
 const footerContainer = css`
+  background: white;
   box-shadow: 0px -10px 21px 0px rgba(0,0,0,0.75);
   padding: 1em 0;
 `
@@ -49,15 +50,15 @@ const Footer = ({ sectionRef }) => {
         <div>
           <h3 css={footerContactTitle}> Contato </h3>
           <div>
-            <StaticImage style={{ width: '2em' }} src={'../images/whatsapp.svg'} />
+            <StaticImage style={{ width: '2em' }} src={'../images/whatsapp.svg'} alt='WhatsApp' />
             <span css={spanCss} > 83 996498582 </span>
           </div>
           <div>
-            <StaticImage style={{ width: '2em' }} src={'../images/instagram.svg'} />
+            <StaticImage style={{ width: '2em' }} src={'../images/instagram.svg'} alt='Instagram' />
             <span css={spanCss}> @noronhafacil </span>
           </div>
           <div>
-            <StaticImage style={{ width: '2em' }} src={'../images/mail.svg'} />
+            <StaticImage style={{ width: '2em' }} src={'../images/mail.svg'} alt='Email' />
             <span css={spanCss}> noronhafacil@gmail.com</span>
           </div>
         </div>

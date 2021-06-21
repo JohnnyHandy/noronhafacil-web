@@ -3,7 +3,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 
 
 
-const MainSection = ({ height, sectionRef }) => {
+const MainSection = ({ height, sectionRef, headerHeight }) => {
   return(
     <div
     ref={sectionRef}
@@ -18,7 +18,7 @@ const MainSection = ({ height, sectionRef }) => {
   >
       <div
         style={{
-          position: 'absolute',
+          position: 'fixed',
           zIndex: '-1',
           width: '100%',
           height: '100%'
@@ -32,8 +32,8 @@ const MainSection = ({ height, sectionRef }) => {
           alt='Noronha Fácil'
         />
       </div>
-      <div>
-       <StaticImage style={{ margin: '5em auto' }} aspectRatio={500/161} src={'../images/noronhafacil-logo.png'} alt='Noronha Fácil Turismo' />
+      <div style={{ marginTop: headerHeight }} >
+       <StaticImage style={{ margin: `5em auto` }} aspectRatio={500/161} src={'../images/noronhafacil-logo.png'} alt='Noronha Fácil Turismo' />
       </div>
     </div>
   )

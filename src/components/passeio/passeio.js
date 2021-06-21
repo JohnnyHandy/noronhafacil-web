@@ -29,6 +29,7 @@ const gridImageCss = css`
   };
 `
 const PasseiosGridCss = css`
+  background: white;
   display:grid;
   grid-template-columns: 50% 50%;
   border: 1px solid ${colors.noronhaBlue};
@@ -93,7 +94,7 @@ const Passeio = ({ passeio, imageData }) => {
       key={passeio.name}
       css={PasseiosGridCss}
       >
-    <GatsbyImage css={gridImageCss} alt={imageKey} image={image} />
+    <GatsbyImage css={gridImageCss} alt={passeio.imageKey} image={image} />
       <div
       css={passeioInfoContainerCss}
       >

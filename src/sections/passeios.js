@@ -208,7 +208,7 @@ const Passeios = ({ sectionRef }) => {
    `
   )
   const PasseiosGrid = () => {
-    return passeiosInfo.map((passeio, index) => ( <PasseioContainer passeio={passeio} imageData={imageData} /> ))
+    return passeiosInfo.map((passeio, index) => ( <PasseioContainer key={passeio.imageKey} passeio={passeio} imageData={imageData} /> ))
   }
   return (
     <div

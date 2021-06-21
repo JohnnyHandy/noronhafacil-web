@@ -10,6 +10,7 @@ const sectionTitle = css`
 
 const sectionContainerCss = css`
   align-items: center;
+  background: white;
   display: flex;
   flex-direction: row-reverse;
   justify-content: flex-start;

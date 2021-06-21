@@ -34,7 +34,6 @@ const Layout = ({ children, height, headerHeight, allRefsObject, scrollToRef }) 
       >
         <main
           style={{
-            marginTop: headerHeight
           }}
         >{children}</main>
       <Footer sectionRef={allRefsObject.ContatosRef} />
