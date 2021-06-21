@@ -1,12 +1,13 @@
 import React from 'react'
 import { css } from '@emotion/react'
-import { StaticImage } from 'gatsby-plugin-image'
+import { getImage, GatsbyImage } from 'gatsby-plugin-image'
 
 import { colors } from '../../utils/constants'
 
 const passeioInfoContainerCss = css`
   display: flex;
   flex-direction: column;
+  height: 100%;
   justify-content: space-between;
   text-align: center; padding: 1em;   
 `
@@ -21,7 +22,8 @@ const passeioDescriptionCss = css`
 const gridImageCss = css`
   align-self: center;
   max-height: 50vh;
-  @media (max-width: 650px) {
+  @media (max-width: 1024px) {
+    min-height: 40vh;
     width:100%
   };
 `
@@ -29,7 +31,7 @@ const PasseiosGridCss = css`
   display:grid;
   grid-template-columns: 50% 50%;
   border: 1px solid ${colors.noronhaBlue};
-  @media (max-width: 650px) {
+  @media (max-width: 1024px) {
     display: flex;
     flex-direction: column;
   };
@@ -61,14 +63,6 @@ const verMaisButton = css`
     margin: 0.5em auto;
   };
 `
-// const verMaisCss = css`
-//   ${props => props.seeMore ?
-//     `display: block;
-//     opacity: 0%;
-//     ` :
-//     ''}
-// `
-
 const comprarAgoraButton = css`
   background: lightgreen;
   color: white;
@@ -88,14 +82,17 @@ const comprarAgoraButton = css`
 `
 
 
-const Passeio = ({ passeio }) => {
+const Passeio = ({ passeio, imageData }) => {
   const [seeMore, setSeeMore] = React.useState(false)
+  const imageKey = Object.keys(imageData).find(key => key === passeio.imageKey)
+  const image = getImage(imageData[imageKey])
+
   return (
     <div
       key={passeio.name}
       css={PasseiosGridCss}
       >
-    <StaticImage css={gridImageCss} src='../../images/passeio.jpg' />
+    <GatsbyImage css={gridImageCss} alt={imageKey} image={image} />
       <div
       css={passeioInfoContainerCss}
       >

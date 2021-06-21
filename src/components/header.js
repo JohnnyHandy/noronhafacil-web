@@ -82,7 +82,7 @@ const Header = ({ allRefsObject, scrollToRef, headerHeight, ...rest }) => {
         >
           <span
             onClick={() => scrollToRef(allRefsObject.MainRef)}
-            onKey={() => scrollToRef(allRefsObject.MainRef)}
+            onKeyDown={() => scrollToRef(allRefsObject.MainRef)}
             role='button'
             tabIndex="-5"
             css={navLink}

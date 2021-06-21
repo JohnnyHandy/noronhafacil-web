@@ -24,7 +24,7 @@ const sectionContainerCss = css`
 const imageContainerCss = css`
   height: 100%;
   width: 50%;
-  @media (max-width: 650px) {
+  @media (max-width: 1024px) {
     width: 100%;
     position: absolute;
   };
@@ -39,7 +39,7 @@ const sectionDescriptionCss = css`
     max-width: 50%;
     padding: 1em 0;
     text-align: center;
-    @media (max-width: 650px) {
+    @media (max-width: 1024px) {
       background-color: rgba(240, 248, 255, 0.54);
       max-width: initial;
       padding: 1em;
@@ -51,10 +51,26 @@ const paragraphsContainerCss = css`
   font-size: 1.2em;
   letter-spacing: 8px;
   line-height: 2.5em;
+  padding: 0 1em; 
   text-align: center;
   @media (max-width: 650px) {
     letter-spacing: 5px;
     line-height: 1.5em;
+  };
+  @media only screen and (min-width: 1025px) and (max-width: 1280px){
+    font-size: 1em;
+    letter-spacing: 4px;
+    line-height: 1.5em;
+  };
+  @media only screen and (min-width: 1281px) and (max-width: 1400px){
+    font-size: 1.2em;
+    letter-spacing: 8px;
+    line-height: 1.5em;
+  };
+  @media only screen and (min-width: 1401px) and (max-width: 1700px){
+    font-size: 1.3em;
+    letter-spacing: 8px;
+    line-height: 2em;
   };
 `
 
@@ -68,10 +84,10 @@ const QuemSomos = ({ sectionRef, height }) => {
       css={imageContainerCss}
     >
       <StaticImage
-        aspectRatio={2053/1368}
+        aspectRatio={712/712}
         style={{ width: '100%', height: '100%' }}
         imgStyle={{ width: '100%', height: '100%' }}
-        src='../images/somos4.jpg'
+        src='../images/quemsomos.jpg'
         alt='Noronha Fácil'
       />
     </div>

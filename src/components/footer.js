@@ -13,6 +13,7 @@ const footerContactTitle = css`
 
 const footerContainer = css`
   box-shadow: 0px -10px 21px 0px rgba(0,0,0,0.75);
+  padding: 1em 0;
 `
 
 const footerInnerContainer = css`

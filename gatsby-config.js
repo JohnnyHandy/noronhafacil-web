@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
     title: `Noronha Fácil - Turismo`,
-    description: `Sua aventura começa aqui!`,
+    description: `Sua aventura em Fernando de Noronha começa aqui!`,
     author: `Noronha Fácil`,
+    summary: 'Turismo em Fernando de Noronha'
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -25,7 +26,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-gatsby-cloud`,
