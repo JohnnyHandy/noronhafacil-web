@@ -22,7 +22,7 @@ const passeioDescriptionCss = css`
 const gridImageCss = css`
   align-self: center;
   max-height: 50vh;
-  min0height: 50vh;
+  min-height: 50vh;
   @media (max-width: 1024px) {
     min-height: 40vh;
     width:100%
