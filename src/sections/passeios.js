@@ -132,7 +132,7 @@ const Passeios = ({ sectionRef }) => {
           )
         }
       }
-      entardecer: file(relativePath: { eq: "passeio.jpg" }) {
+      entardecer: file(relativePath: { eq: "entardecer.jpg" }) {
         childImageSharp {
           gatsbyImageData(
             placeholder: BLURRED
