@@ -1,5 +1,6 @@
 import React from 'react'
 import { css } from '@emotion/react'
+import { Link } from 'gatsby'
 import { getImage, GatsbyImage } from 'gatsby-plugin-image'
 
 import { colors } from '../../utils/constants'
@@ -40,6 +41,7 @@ const PasseiosGridCss = css`
 `
 const buyContainerCss = css`
   margin-top: 1.5em;
+  display: grid;
 `
 
 
@@ -83,12 +85,12 @@ const comprarAgoraButton = css`
   }
 `
 
+const url = `https://wa.me/558396498582?text=${encodeURIComponent('Olá! Vim através do site do Noronha Fácil!')}`
 
 const Passeio = ({ passeio, imageData }) => {
   const [seeMore, setSeeMore] = React.useState(false)
   const imageKey = Object.keys(imageData).find(key => key === passeio.imageKey)
   const image = getImage(imageData[imageKey])
-
   return (
     <div
       key={passeio.name}
@@ -131,17 +133,19 @@ const Passeio = ({ passeio, imageData }) => {
           passeio.price === null ? (
             <span> Consulte-nos para orçamento </span>
           ) : (
-            <>
+            <div>
             <span css={oldPriceCss} > {passeio.oldPrice !== null && `R$${passeio.oldPrice}`} </span>
             <span css={priceCss}> R$ {passeio.price} </span>
-            </>
+            </div>
           )
         }
-        <div
+        <Link
         css={comprarAgoraButton}
+        target='_blank'
+        to={url}
         >
           Comprar Agora
-        </div>
+        </Link>
 
         </div>
       </div>
