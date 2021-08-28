@@ -55,7 +55,7 @@ const Footer = ({ sectionRef }) => {
           </div>
           <div>
             <StaticImage style={{ width: '2em' }} src={'../images/instagram.svg'} alt='Instagram' />
-            <a target='_blank' href={'https://www.instagram.com/noronhafacil/'} css={spanCss}> @noronhafacil </a>
+            <a target='_blank' rel="noreferrer" href={'https://www.instagram.com/noronhafacil/'} css={spanCss}> @noronhafacil </a>
           </div>
           <div>
             <StaticImage style={{ width: '2em' }} src={'../images/mail.svg'} alt='Email' />

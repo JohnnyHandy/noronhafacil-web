@@ -10,7 +10,14 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function Seo({ description, lang, meta, title }) {
+function Seo({ description, lang, meta, title, track }) {
+  React.useEffect(() => {
+    if (typeof window !== "undefined") {
+      if (window.fbq != null && track) {
+        window.fbq('track','Lead');
+      }
+    }
+  }, [])
   const { site } = useStaticQuery(
     graphql`
       query {
