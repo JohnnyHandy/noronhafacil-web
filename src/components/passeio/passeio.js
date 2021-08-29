@@ -3,7 +3,7 @@ import { css } from '@emotion/react'
 import { Link } from 'gatsby'
 import { getImage, GatsbyImage } from 'gatsby-plugin-image'
 
-import { colors } from '../../utils/constants'
+import { colors, phoneNumber, welcomeMessage } from '../../utils/constants'
 
 const passeioInfoContainerCss = css`
   display: flex;
@@ -85,7 +85,7 @@ const comprarAgoraButton = css`
   }
 `
 
-const url = `https://wa.me/558396498582?text=${encodeURIComponent('Olá! Vim através do site do Noronha Fácil!')}`
+const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(welcomeMessage)}`
 
 const Passeio = ({ passeio, imageData }) => {
   const [seeMore, setSeeMore] = React.useState(false)

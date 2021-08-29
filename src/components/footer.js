@@ -2,7 +2,7 @@ import React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 import { css } from '@emotion/react'
 
-import { colors } from '../utils/constants'
+import { colors, phoneNumber } from '../utils/constants'
 
 const footerContactTitle = css`
   color: ${colors.noronhaBlue};
@@ -51,7 +51,7 @@ const Footer = ({ sectionRef }) => {
           <h3 css={footerContactTitle}> Contato </h3>
           <div>
             <StaticImage style={{ width: '2em' }} src={'../images/whatsapp.svg'} alt='WhatsApp' />
-            <span css={spanCss} > 83 996498582 </span>
+            <span css={spanCss} > {phoneNumber} </span>
           </div>
           <div>
             <StaticImage style={{ width: '2em' }} src={'../images/instagram.svg'} alt='Instagram' />
@@ -61,6 +61,9 @@ const Footer = ({ sectionRef }) => {
             <StaticImage style={{ width: '2em' }} src={'../images/mail.svg'} alt='Email' />
             <span css={spanCss}> noronhafacil@gmail.com</span>
           </div>
+        </div>
+        <div>
+          <span>Entre em contato agora</span>
         </div>
       </div>
     </footer>
